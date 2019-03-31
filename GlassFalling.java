@@ -8,6 +8,21 @@
 
 public class GlassFalling {
 
+  //Function to find maximum of two values
+    int max(int a,int b) {
+      if (a>b)
+          return a;
+      else 
+          return b;
+}
+    //Function to find minimum of two values
+    int min(int a,int b) {
+      if (a<b)
+          return a;
+      else 
+          return b;
+}
+  
   // Do not change the parameters!
   public int glassFallingRecur(int floors, int sheets) {
     // Fill in here and change the return
