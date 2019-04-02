@@ -1,14 +1,8 @@
 /**
  * Glass Falling
  */
-
-/**
-* Mohammed Abid
-*/
-
 public class GlassFalling {
-
-  //Function to find maximum of two values
+    //Function to find maximum of two values
     int max(int a,int b) {
       if (a>b)
           return a;
@@ -22,20 +16,36 @@ public class GlassFalling {
       else 
           return b;
 }
-  
+    
   // Do not change the parameters!
-  public int glassFallingRecur(int floors, int sheets) {
+     public int glassFallingRecur(int floors, int sheets) {
     // Fill in here and change the return
-    return 0;
+         
+         if ( floors == 0 || floors == 1 || sheets==1)  //0 floors = 0 trials needed, 1 floor = 1 trial needed, 1 sheet needs trials=floors
+             return floors;
+        
+        
+         // Assigning the highest possible value to variable minimum 
+         int minimum = Integer.MAX_VALUE;  
+         int result , counter = 1 ;
+         
+         // Recursion to find glassFallingRecur(floors,sheets)
+         while( counter <= floors){
+             // Find max from both case, add 1 and assigns it to variable result
+             result = 1+ max(glassFallingRecur(counter-1,sheets-1), glassFallingRecur(floors-counter,sheets));
+               minimum = min(minimum,result);
+             counter++ ;
+         }
+         
+        return minimum++;
   }
-
-  // Optional:
-  // Pick whatever parameters you want to, just make sure to return an int.
-  public int glassFallingMemoized() {
-    // Fill in here and change the return
-    return 0;
-  }
-
+     // Optional:
+     // Pick whatever parameters you want to, just make sure to return an int.
+    /* public int glassFallingMemoized() {
+       // Fill in here and change the return
+       return 0;
+     }*/
+     
   // Do not change the parameters!
   public int glassFallingBottomUp(int floors, int sheets) {
     // Fill in here and change the return
