@@ -17,7 +17,7 @@ public class GlassFalling {
           return b;
 }
     
-  // Do not change the parameters!
+     // Do not change the parameters!
      public int glassFallingRecur(int floors, int sheets) {
     // Fill in here and change the return
          
@@ -46,7 +46,8 @@ public class GlassFalling {
        return 0;
      }*/
      
-   // Do not change the parameters!
+     
+    // Do not change the parameters!
     public int glassFallingBottomUp(int floors, int sheets) {
    // Fill in here and change the return
         // 
@@ -79,8 +80,9 @@ public class GlassFalling {
         return sheetFloor[sheets][floors];
   }
     
-
- public static void main(String args[]){
+    
+    
+    public static void main(String args[]){
       GlassFalling gf = new GlassFalling();
       
 
