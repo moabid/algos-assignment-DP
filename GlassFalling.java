@@ -1,5 +1,6 @@
 /**
  * Glass Falling
+ * Author: Mohammed Abid
  */
 public class GlassFalling {
     //Function to find maximum of two values
