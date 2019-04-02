@@ -80,16 +80,17 @@ public class GlassFalling {
   }
     
 
-  public static void main(String args[]){
+ public static void main(String args[]){
       GlassFalling gf = new GlassFalling();
+      
 
       // Do not touch the below lines of code, and make sure
       // in your final turned-in copy, these are the only things printed
       int minTrials1Recur = gf.glassFallingRecur(27, 2);
       int minTrials1Bottom = gf.glassFallingBottomUp(27, 2);
-      int minTrials2Recur = gf.glassFallingRecur(100, 3);
+      //int minTrials2Recur = gf.glassFallingRecur(100, 3);  // Didn't change it to Memo because I didn't code the optional Memo
       int minTrials2Bottom = gf.glassFallingBottomUp(100, 3);
       System.out.println(minTrials1Recur + " " + minTrials1Bottom);
-      System.out.println(minTrials2Recur + " " + minTrials2Bottom);
+      System.out.println(/*minTrials2Recur +*/ " " + minTrials2Bottom); 
   }
 }
