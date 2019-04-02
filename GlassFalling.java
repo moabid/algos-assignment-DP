@@ -46,12 +46,39 @@ public class GlassFalling {
        return 0;
      }*/
      
-  // Do not change the parameters!
-  public int glassFallingBottomUp(int floors, int sheets) {
-    // Fill in here and change the return
-    return 0;
+   // Do not change the parameters!
+    public int glassFallingBottomUp(int floors, int sheets) {
+   // Fill in here and change the return
+        // 
+        int sheetFloor[][]= new int[sheets+1][floors+1];
+        int result , i , j , x;
+        
+        for (i =1 ;i <= sheets; i++){
+            sheetFloor[i][0]= 0;
+            sheetFloor[i][1]= 1;
+        }
+        
+        for (j =1 ;j <= floors; j++)
+            sheetFloor[1][j]= j;
+       
+        // This loop fills up the matrix
+        i = 2;
+        while(i <= sheets){
+            for(j=2 ; j<= floors; j++){
+                int minimum = Integer.MAX_VALUE;
+                for ( x =1 ;x<= j ; x++)
+                {
+                    result = 1 + max(sheetFloor[i-1][x-1],sheetFloor[i][j-x]);
+                    minimum = min(minimum, result);
+                }
+                // Defines the minimum value for sheetFloor[i][j]
+                sheetFloor[i][j] = minimum ;
+            }
+            i++;
+        }
+        return sheetFloor[sheets][floors];
   }
-
+    
 
   public static void main(String args[]){
       GlassFalling gf = new GlassFalling();
