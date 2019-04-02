@@ -1,18 +1,21 @@
 /**
  * Rod cutting problem described in Chapter 15 of textbook
  */
-
-/** 
-* Mohammed Abid
-*/
 public class RodCutting {
-
-  // Do not change the parameters!
-  public int rodCuttingRecur(int rodLength, int[] lengthPrices) {
-    return 0;
-  }
-
-  // Do not change the parameters!
+    //Function to find maximum of two values
+    int max(int a,int b) {
+      if (a>b)
+          return a;
+      else 
+          return b;
+}
+    
+   
+   // Do not change the parameters!
+    /* Recursive Function that finds a way to cut a rod
+       in a way that maximize the revenue 
+    */
+  
   public int rodCuttingBottomUp(int rodLength, int[] lengthPrices) {
     return 0;
   }
