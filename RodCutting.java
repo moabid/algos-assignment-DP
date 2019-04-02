@@ -15,7 +15,6 @@ public class RodCutting {
     /* Recursive Function that finds a way to cut a rod
        in a way that maximize the revenue 
     */
-  
   public int rodCuttingRecur(int rodLength, int[] lengthPrices) {
       // Base case
 /*      if( rodLength == 0)
@@ -60,11 +59,12 @@ public class RodCutting {
     return solution[rodLength];
   }
     
-
-  public static void main(String args[]){
-      RodCutting rc = new RodCutting();
-
-      // In your turned in copy, do not touch the below lines of code.
+    
+    public static void main(String args[]){
+        RodCutting rc = new RodCutting();
+       
+     
+     // In your turned in copy, do not touch the below lines of code.
       // Make sure below is your only output.
       int length1 = 7;
       int[] prices1 = {1, 4, 7, 3, 19, 5, 12};
@@ -76,5 +76,6 @@ public class RodCutting {
       int maxSell2Bottom = rc.rodCuttingBottomUp(length2, prices2);
       System.out.println(maxSell1Recur + " " + maxSell1Bottom);
       System.out.println(maxSell2Recur + " " + maxSell2Bottom);
+
   }
 }
