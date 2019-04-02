@@ -16,10 +16,50 @@ public class RodCutting {
        in a way that maximize the revenue 
     */
   
-  public int rodCuttingBottomUp(int rodLength, int[] lengthPrices) {
-    return 0;
-  }
+  public int rodCuttingRecur(int rodLength, int[] lengthPrices) {
+      // Base case
+/*      if( rodLength == 0)
+          return 0; */
+            int [] solution = new int[rodLength+1];
+                    solution[0] = 0 ;
 
+      int maxValue;
+      
+       // Assigning the smallest possible value to maxValue
+           maxValue = Integer.MIN_VALUE;
+          
+          // Partitioning the given rod of length
+          // n into two parts and take maximum
+          for (int i =1 ; i <= rodLength; i++){
+              // rod of length i has price[i-1]
+              int profit = lengthPrices[i-1] + rodCuttingRecur(rodLength-i,lengthPrices);
+              maxValue = max(maxValue,profit);
+              solution[i] = maxValue;
+          
+      }
+    return maxValue;
+  }
+  
+  // Do not change the parameters!
+  /* Dynamic Function that finds a way to cut a rod
+       in a way that maximize the revenue  */
+  public int rodCuttingBottomUp(int rodLength, int[] lengthPrices) {
+       // Solution[] stores maximum profit acheived from rod
+      int [] solution = new int[rodLength+1];
+      solution[0] = 0 ;
+      // Making solution[] in botton up way
+      
+      for( int i =1 ; i <= rodLength ; i++){
+          
+          // Divide the rod into two rods and take maximum
+          for( int j =0 ; j<i ; j++)
+         solution[i] = max(solution[i], lengthPrices[j] + solution[i-j-1] );
+          
+      }
+      // returns maximum profit achieved
+    return solution[rodLength];
+  }
+    
 
   public static void main(String args[]){
       RodCutting rc = new RodCutting();
