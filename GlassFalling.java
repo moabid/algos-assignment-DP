@@ -94,6 +94,6 @@ public class GlassFalling {
       //int minTrials2Recur = gf.glassFallingRecur(100, 3);  // Didn't change it to Memo because I didn't code the optional Memo
       int minTrials2Bottom = gf.glassFallingBottomUp(100, 3);
       System.out.println(minTrials1Recur + " " + minTrials1Bottom);
-      System.out.println(/*minTrials2Recur +*/ " " + minTrials2Bottom); 
+      System.out.println(/*minTrials2Recur +*/ " " + minTrials2Bottom); //minTrials2Recur is commented bc the recursion would run very long
   }
 }
